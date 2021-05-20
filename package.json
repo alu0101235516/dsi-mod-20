@@ -8,6 +8,7 @@
     "add": "tsc-watch --onSuccess \"node dist/add.js\"",
     "remove": "tsc-watch --onSuccess \"node dist/remove.js\"",
     "find": "tsc-watch --onSuccess \"node dist/find.js\"",
+    "modify": "tsc-watch --onSuccess \"node dist/modify.js\"",
     "doc": "typedoc",
     "coverage": "nyc npm test && nyc report --reporter=lcov"
   },

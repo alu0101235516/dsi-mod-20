@@ -17,11 +17,19 @@ MongoClient.connect(dbURL, {
 }).then((client) => {
   const db = client.db(dbName);
 
-  return db.collection<Article>('articles').findOne({
-    barcode: 32906592031,
+  return db.collection<Article>('articles').updateMany({
+    barcode: 43092189540,
+  }, {
+    $set: {
+      desc: 'Modified article',
+      nStock: 15,
+      pvp: 300.50,
+      oStock: true,
+      barcode: 32906592031,
+    },
   });
 }).then((result) => {
-  console.log(result);
+  console.log("\nAn item has been modified!\n");
 }).catch((error) => {
   console.log(error);
 });
